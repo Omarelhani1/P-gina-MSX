@@ -7,7 +7,7 @@
 
 	<link rel="shortcut icon" href="{{url_for('static', filename='img/favicon.ico')}}"> 
 	<link rel="stylesheet" href="{{url_for('static', filename='css/vendor/fluidbox.min.css')}}">
-	<link rel="stylesheet" href="{{url_for('static', filename='css/main.css'}}">
+	<link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
 
 	<title>{% block title %}{% endblock %}</title>
 
@@ -18,15 +18,15 @@
 	<header>
 
 		<div id="logo-container">
-			<div id="logo"><a href="base.html">Omar Elhani</a></div>
+			<div id="logo"><a href="/">Omar Elhani</a></div>
 			<div id="subtitle">Estudiante de 1ASIR de Los Palacios y VFCA</div>
 		</div>
 		<nav>
 			<ul>
-				<li><a href="#">Link 1</a></li>
-				<li><a href="#">Link 2</a></li>
-				<li><a href="#">Link 3</a></li> 
-				<li><a href="mailto:your@address.com" class="bordered">Contact</a></li>
+				<li><a href="/">Página Prinicpal</a></li>
+				<li><a href="{{url_for('juegos')}}"> Juegos</a></li>
+				<li><a href="">Lista De Juegos</a></li> 
+				<li><a href="omar.elhani1@gmail.com" class="bordered">Contacto</a></li>
 			</ul>
 		</nav> 
 
@@ -35,7 +35,7 @@
 	<div id="content">
 
 		<section class="intro">
-			<h1>Bienvenido a, <span class="nl">{% block titulo %}{% endblock %}</span></h1>
+			<h1>{% block titulo %}{% endblock %}</h1>
 			<p>
 				{% block contenido %}{% endblock %}
 			</p>
@@ -43,33 +43,33 @@
 
 		<section class="row">
 			<div class="col-full">
-				<h2>Example title</h2>
+				<h2>Juegos MSX</h2>
 				<p>
-					Gumba is a fictional agency from Amsterdam, The Netherlands. This is the place where you would normally introduce yourself. You can easily change the template to fit your needs by adding text or changing the colors and styles.
+					MSX es un estándar de microordenador doméstico de 8 bits comercializado durante los años 1980 y principio de los años 1990. Fue definido por Kazuhiko Nishi y presentado el 27 de junio de 1983 en Japón, donde se convirtió en el dominador del mercado doméstico
 				</p>
 			</div>
 		</section>
 
 		<section class="row">
 			<div class="photo-grid">
-				<a href="img/example-photo-b.jpg" rel="lightbox" class="col-2"><img src="img/example-photo-b.jpg" alt="Example photo"></a>
-				<a href="img/example-photo-c.jpg" rel="lightbox" class="col-2"><img src="img/example-photo-c.jpg" alt="Example photo"></a>
-				<a href="img/example-photo-a.jpg" rel="lightbox" class="col-1"><img src="img/example-photo-a.jpg" alt="Example photo"></a>
+				<a href="{{url_for('static', filename='img/msx1.png')}}" rel="lightbox" class="col-2"><img src="{{url_for('static', filename='img/msx1.png')}}" alt="Example photo"></a>
+				<a href="{{url_for('static', filename='img/msx2.png')}}" rel="lightbox" class="col-2"><img src="{{url_for('static', filename='img/msx2.png')}}" alt="Example photo"></a>
+				<a href="{{url_for('static', filename='img/msx3.jpg')}}" rel="lightbox" class="col-1"><img src="{{url_for('static', filename='img/msx3.jpg')}}" alt="Example photo"></a>
 			</div>
 		</section>
 
 
 		<section class="row">
 			<div class="col">
-				<h2>Contact</h2>
+				<h2>Contacto</h2>
 				<p>
-					Want to work with us? Just send us an <a href="mailto:#">email</a>.
+					Quieres trabajar con nosotros? Mándanos un correo <a href="www.gmail.com">email</a>.
 				</p>
 			</div>
 			<div class="col">
-				<h2>Follow us</h2>
+				<h2>Siguenos</h2>
 				<p>
-					We are on <a href="http://twitter.com/rickwaalders">Twitter</a>, <a href="http://dribbble.com/rickwaalders">Dribbble</a> and <a href="http://instagram.com/rickwaalders">Instagram</a>.
+					Estamos en <a href="http://twitter.com/Omarh_011">Twitter</a>, <a href="https://github.com/Omarelhani1">Github</a> y <a href="http://instagram.com/Omarh_011">Instagram</a>.
 				</p>
 			</div>
 		</section>
@@ -78,7 +78,7 @@
 		<section class="row">
 			<div class="col-full">
 				<p>
-					© 2014 - This is a free website template by <a href="http://www.pixelsbyrick.com">Rick Waalders</a>
+					© 2014 . Aquí puede encotnrar la plantilla empleada <a href="http://www.pixelsbyrick.com">Rick Waalders</a>
 				</p>
 			</div>
 		</section>
@@ -89,12 +89,12 @@
 	<script>
 	if (!window.jQuery) 
 	{
-	    document.write('<script src="js/vendor/jquery.1.11.min.js"><\/script>');
+	    document.write('<script src="static/js/vendor/jquery.1.11.min.js"><\/script>');
 	}
 	</script>
 
-	<script src="js/vendor/jquery.fluidbox.min.js"></script>
-	<script src="js/main.js"></script>
+	<script src="static/js/vendor/jquery.fluidbox.min.js"></script>
+	<script src="static/js/main.js"></script>
 
 	<script>
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
